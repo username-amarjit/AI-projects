@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family: "Libre Baskerville", serif;
+                font-weight: 500;
+                font-style: normal;
+            }
+            .chat{
+                padding: 5px;
+            }
+            .chat span{
+                padding-left: 15px;
+            }
+            .chat p{
+                padding-left: 2px;
+            }
+            .chat:nth-child(even) {
+                margin-bottom: 2px;
+                border-width: 2px;
+                color: white;
+                background-color: rgb(72, 58, 58);
+                border-radius: 5px;
+            }
+
+            .chat:nth-child(odd) {
+                margin-bottom: 2px;
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+        
+            /* Hides scrollbar for Firefox */
+            .hide-scrollbar {
+                scrollbar-width: none; /* Firefox */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outermost-box flex justify-center items-center h-screen">
+            <div class="outer-box w-3/5 h-screen ">
+                <div
+                    class="chatbox mt-0  h-screen flex flex-col justify-between mt-2"
+                >
+                    <div class="heading flex justify-center">
+                        <h2 class="text-3xl font-bold">Heading is Here.</h2>
+                    </div>
+                    <div class="chat-content-area flex justify-center overflow-auto mt-6 mb-3 hide-scrollbar">
+                        <div class="outer-chat-area">
+                            <div class="chat">
+                                <!-- <span id="iconA" class="w-10 h-10 flex items-center justify-center bg-green-400 text-white rounded-full text-xl"> -->
+                                <span id="iconA" class="text-xl px-4 font-bold">
+                                    A</span>
+                                <p class="px-2">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Ut, animi!
+                                </p>
+                            </div>
+                            <div class="chat">
+                                <!-- <span id="iconB" class="w-10 h-10 flex items-center justify-center bg-gray-400 text-white rounded-full text-xl"> -->
+                                <span id="iconB" class="text-xl font-bold">
+                                    B </span>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Rerum nulla fugit deserunt
+                                    ullam reprehenderit corporis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prompt-area  mb-0 flex justify-center items-center">
+                        <div class="w-4/5 ">
+                            <div
+                                class="message-area w-full"
+                            >
+                                <textarea
+                                    class=" rounded-lg align-top border-4 border-black w-full"
+                                    name="message Prompt"
+                                    id="prompt-text"
+                                    rows="3"
+                                ></textarea>
+                            </div>
+                            <div class="buttons-area flex mt-2  flex justify-between">
+                                <span id="buton1" class="">
+                                    <input
+                                        class="text-sm text-slate-500 w-80 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-grey-50 file:text-grey-700 hover:file:bg-violet-100"
+                                        type="file"
+                                        name="attach file"
+                                        id=""
+                                    />
+                                </span>
+                                <span
+                                    id="button2"
+                                    class="flex justify-center items-center"
+                                >
+                                    <button
+                                        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                                    >
+                                        Submit
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
