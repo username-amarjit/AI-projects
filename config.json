@@ -1,5 +1,8 @@
 {
-    "API_URL": "https://api.example.com",
+    "BASE_API_URL": "https://api.example.com",
     "API_KEY": "your-api-key",
-    "HEADING":"AI NUTRITIONIST"
+    "HEADING":"AI NUTRITIONIST",
+    "SUBHEADING":"",
+    "USER_NAME":"YOU",
+    "AI NAME":"RAY"
 }
