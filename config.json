@@ -1,5 +1,5 @@
 {
-    "BASE_API_URL": "https://api.example.com",
+    "BASE_API_URL": "http://localhost:5000",
     "API_KEY": "your-api-key",
     "HEADING":"AI NUTRITIONIST",
     "SUBHEADING":"",

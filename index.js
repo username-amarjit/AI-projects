@@ -28,7 +28,9 @@ function send_request(request_url, payload) {
         console.log('in request function',payload)
         axios
             .post(base_url.concat("/", request_url), payload, {
-                Headers: { "Access-Control-Allow-Credentials": true },
+                Headers: { "Access-Control-Allow-Credentials": true ,
+                'Content-Type': 'application/json'
+            }
             })
             .then(function (response) {
                 // handle success
@@ -56,5 +58,5 @@ function btn_press() {
         input_prompt : document.querySelector("#prompt-text").value,
     }
 
-    send_request('aiApiCall',payload)    
+    send_request('ApiCall',payload)    
 }
