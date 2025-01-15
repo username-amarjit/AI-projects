@@ -20,43 +20,59 @@ async function get_config() {
 }
 
 // console.log(CONFIG_DATA,'CONFIG_DATA')
-function send_request(request_url, payload) {
+async function send_request(request_url, payload) {
     try {
         const base_url =
             (CONFIG_DATA && CONFIG_DATA.BASE_API_URL) ||
             "http://localhost:5000";
-        console.log('in request function',payload)
-        axios
-            .post(base_url.concat("/", request_url), payload, {
-                Headers: { "Access-Control-Allow-Credentials": true ,
-                'Content-Type': 'application/json'
+        console.log("in request function", payload);
+        const response = await axios.post(
+            base_url.concat("/", request_url),
+            payload,
+            {
+                Headers: {
+                    "Access-Control-Allow-Credentials": true,
+                    "Content-Type": "application/json",
+                },
             }
-            })
-            .then(function (response) {
-                // handle success
-                console.log(response);
-                return response, 0;
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-                return error, -1;
-            });
+        );
+
+        // handle success
+        console.log(response);
+        console.log('response.data.data',response.data);
+        return response.data;
     } catch (error) {
         console.log(error);
-        return error, -1;
+        return error;
     }
 }
 
-send_request("event-stream");
+// send_request("event-stream");
 
-document.querySelector("#submit_button").addEventListener("click",btn_press)
+function addNewChat(user, message) {
+    const new_child = `<div class="chat">
+        <span id="iconA" class="text-xl px-4 font-bold">
+            ${user}
+        </span>
+        <p class="px-2">
+            ${message}
+        </p>
+    </div>`;
+    document.querySelector("#chat-area").innerHTML += new_child;
+}
 
-function btn_press() {
+document.querySelector("#submit_button").addEventListener("click", btn_press);
 
+async function btn_press() {
+    let prompt = document.querySelector("#prompt-text").value;
+    document.querySelector("#prompt-text").value = "";
     let payload = {
-        input_prompt : document.querySelector("#prompt-text").value,
-    }
+        input_prompt: prompt,
+    };
+    addNewChat("A", prompt);
 
-    send_request('ApiCall',payload)    
+    const api_response= await send_request("ApiCall", payload);
+    console.log(api_response, "----------");
+
+    addNewChat("B", api_response);
 }
