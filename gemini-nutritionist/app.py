@@ -45,16 +45,6 @@ def api_call():
     
     return Response(ApiCall(data), content_type='text/html')
 
-# @app.route('/ApiCall', methods=['POST'])
-# def api_call():
-#     if request.method == 'OPTIONS':
-#         return Response()
-#     elif request.method == "POST":
-#         data = json.loads(request.data.decode())
-    
-#         return jsonify({"message": "Success"}) #Response(ApiCall(data), content_type='text/html')
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)

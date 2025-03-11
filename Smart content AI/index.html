@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Content Generator</title>
+</head>
+<body>
+    <h1>Social Media Content Generator</h1>
+
+    <label for="platform">Choose platform:</label>
+    <select id="platform">
+        <option value="twitter">Twitter</option>
+        <option value="instagram">Instagram</option>
+        <option value="linkedin">LinkedIn</option>
+    </select>
+
+    <textarea id="content" rows="4" cols="50" placeholder="Enter content here..."></textarea>
+
+    <button onclick="generateContent()">Generate Content</button>
+
+    <h3>Generated Content:</h3>
+    <p id="generated-content"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
