@@ -1,0 +1,7 @@
+*.pyc
+*/migrations/*
+*/static/*
+*.env
+*.log
+*.sqlite3
+*.zip
