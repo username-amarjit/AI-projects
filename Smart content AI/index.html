@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Content Generator</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-    <h1>Social Media Content Generator</h1>
+    <div class="container">
+        <h1>Generate Social Media Content</h1>
+        <form id="contentForm">
+            <label for="topic">Enter a Topic:</label>
+            <input type="text" id="topic" name="topic" required>
+            <button type="submit">Generate Content</button>
+        </form>
 
-    <label for="platform">Choose platform:</label>
-    <select id="platform">
-        <option value="twitter">Twitter</option>
-        <option value="instagram">Instagram</option>
-        <option value="linkedin">LinkedIn</option>
-    </select>
+        <div id="results">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
 
-    <textarea id="content" rows="4" cols="50" placeholder="Enter content here..."></textarea>
-
-    <button onclick="generateContent()">Generate Content</button>
-
-    <h3>Generated Content:</h3>
-    <p id="generated-content"></p>
-
-    <script src="script.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>
