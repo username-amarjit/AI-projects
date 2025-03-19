@@ -7,13 +7,13 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 # Load the models from pickle files
-with open('path/to/decision_tree_model.pkl', 'rb') as f:
+with open(r'D:\test\github\AI-Nutrionist-using-Gemini-Pro\heart-disease-prediction\resources\jupyter notebook\models\k_neighbors_classifiers_model.pkl', 'rb') as f:
     decision_tree_model = pickle.load(f)
 
-with open('path/to/random_forest_model.pkl', 'rb') as f:
+with open(r'D:\test\github\AI-Nutrionist-using-Gemini-Pro\heart-disease-prediction\resources\jupyter notebook\models\random_forest_classifier_model.pkl', 'rb') as f:
     random_forest_model = pickle.load(f)
 
-with open('path/to/logistic_regression_model.pkl', 'rb') as f:
+with open(r'D:\test\github\AI-Nutrionist-using-Gemini-Pro\heart-disease-prediction\resources\jupyter notebook\models\logistic_regression_model.pkl', 'rb') as f:
     logistic_regression_model = pickle.load(f)
 
 # Input validation can be added based on parameter types (optional)
